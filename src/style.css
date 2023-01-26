@@ -33,6 +33,7 @@ body, html, h2, p, h3 {
 } 
 
 :root {
+  --color: #000;
   --digit: 20px;
   --digit-line-height: 24px;
   --title-m--size: 120px;
@@ -40,8 +41,16 @@ body, html, h2, p, h3 {
   --title-s--line-height: 80px;
   --title-m--line-height: 120px;
   --display-font: 'DM Serif Display', sans-serif;
+  --header-font: 'Inter', sans-serif;
+  --header-font-size: '16px';
   --body-font: 'Montserrat', sans-serif;
   --slider-bg: #C6BFFA;
+}
+
+@media screen and (max-width: 800px) {
+  :root {
+    --header-font-size: 14px;
+  }
 }
 
 img {
@@ -136,6 +145,49 @@ img {
   animation-direction: alternate;
   animation-fill-mode: forwards;
 }
+
+.header {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  right: 24px;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: var(--color);
+  position: relative;
+  font-size: var(--header-font-size);
+  font-family: var(--header-font);
+}
+
+.header a::after {
+  content: '';
+  display: inline-block;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  right: 100%;
+  background: var(--color);
+  position: absolute;
+  transition: right 0.3s ease-in-out;
+}
+
+.header svg path {
+  stroke: var(--color);
+}
+
+
+.header a:hover::after {
+  right: 24px;
+}
+
 
 @media screen and (max-width: 800px) {
   .mask {
@@ -242,7 +294,6 @@ img {
   }
 
 }
-
 
 @media screen and (min-width: 1600px) {
   .slider-text {
