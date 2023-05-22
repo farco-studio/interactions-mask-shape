@@ -1,3 +1,5 @@
+![Captura de Pantalla 2023-05-22 a las 12 41 48](https://github.com/farco-studio/interactions-mask-shape/assets/854320/12dc8cff-4ad9-4942-8879-f9a626af07dd)
+
 # Shape Animated Mask Slider
 
 Free, refined interactions to inspire our community and make the web a more beautiful place.
